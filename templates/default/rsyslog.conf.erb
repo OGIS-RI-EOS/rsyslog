@@ -35,6 +35,12 @@ $UDPServerRun <%= node['rsyslog']['port'] %>
 <% end -%>
 <% end -%>
 
+<% unless node['rsyslog']['add_unix_listen_socket'].nil? -%>
+<% node['rsyslog']['add_unix_listen_socket'].each do |socket| -%>
+$AddUnixListenSocket <%= socket %>
+<% end -%>
+<% end -%>
+
 ###########################
 #### GLOBAL DIRECTIVES ####
 ###########################

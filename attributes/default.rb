@@ -41,6 +41,7 @@ default['rsyslog']['user']                      = 'root'
 default['rsyslog']['group']                     = 'adm'
 default['rsyslog']['priv_seperation']           = false
 default['rsyslog']['modules']                   = %w(imuxsock imklog)
+default['rsyslog']['add_unix_listen_socket']    = []
 
 case node['platform']
 when 'ubuntu'
